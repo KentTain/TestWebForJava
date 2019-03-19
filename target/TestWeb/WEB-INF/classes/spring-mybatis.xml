@@ -36,7 +36,7 @@
 	        <!-- 配置MyBatis全局配置文件：mybatis-config.xml -->
 	        <property name="configLocation" value="classpath:mybatis-config.xml"/>
 	        <!-- 扫描entity包 使用别名 org.asset.entity.User -> User -->
-	        <property name="typeAliasesPackage" value="com.study.entity"/>
+	        <property name="typeAliasesPackage" value="com.learning.model"/>
 	        <!-- 扫描sql配置文件:mapper需要的xml文件 -->
 	        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
 	    </bean>
@@ -44,7 +44,7 @@
 	    <!-- 4:配置扫描DAO接口包，动态实现DAO接口，并注入到spring容器中 -->
 	    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 	        <!-- 给出需要扫描DAO接口包 -->
-	        <property name="basePackage" value="com.study.dao"/>
+	        <property name="basePackage" value="com.learning.dao"/>
 	        <!-- 注入sqlSessionFactory -->
 	        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
 	    </bean>
