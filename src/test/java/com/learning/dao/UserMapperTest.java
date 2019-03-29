@@ -16,11 +16,10 @@ import com.learning.model.User;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration({"classpath:spring-mybatis.xml"})
 public class UserMapperTest {
-
 	private Logger logger = LoggerFactory.getLogger(UserMapperTest.class);
 
     @Autowired
-    public UserMapper userDAO;
+    private UserMapper userDAO;
 
 	@Test
 	public void TestInsert() {
@@ -39,18 +38,9 @@ public class UserMapperTest {
 
 	@Test
 	public void TestSelectByPrimaryKey() {
-		User user = new User();
-        user.setUserBirthday(new Date());
-        user.setUserName("James");
-        user.setUserSalary(15000.0);
-        this.userDAO.insert(user);
-        
-        int id = user.getUserId();
-        
+		int id = 1;
         User u = this.userDAO.selectByPrimaryKey(id);
-        logger.info("after delete the user={}", u);
-
-        this.userDAO.deleteByPrimaryKey(id);
+        logger.info("after get the user={}", u);
 	}
 
 	@Test
