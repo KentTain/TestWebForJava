@@ -35,6 +35,12 @@ public class UserController {
 	@Autowired
 	private IUserService userService;
 
+	// /user/home
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String home(HttpServletRequest request, Model model) {
+		return "index";
+	}
+	
 	// /user/test?id=1
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String test(HttpServletRequest request, Model model) {
