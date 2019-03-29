@@ -1,0 +1,9 @@
+CREATE DATABASE `sm_project`
+
+CREATE TABLE `tb_user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户ID',
+  `user_name` varchar(30) DEFAULT NULL COMMENT '用户名',
+  `user_birthday` date DEFAULT NULL COMMENT '用户生日',
+  `user_salary` double DEFAULT NULL COMMENT '用户工资',
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COMMENT='用户表';
