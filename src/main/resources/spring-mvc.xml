@@ -27,9 +27,10 @@
 		mapping="/resources" />
 
 	<!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射 -->
-	<!-- <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"> -->
-	<bean
-		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+	<!-- 1:HandlerMapping -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+	<!-- <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"> -->
 		<property name="messageConverters">
 			<list>
 				<ref bean="mappingJacksonHttpMessageConverter" /> <!-- JSON转换器 -->
@@ -45,6 +46,11 @@
 			</list>
 		</property>
 	</bean>
+
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
 
 	<!-- 配置ViewResolver:可用多个ViewResolver, 使用order属性排序。 InternalResourceViewResolver放在最后 -->
 	<bean id="contentNegotiationManager"
