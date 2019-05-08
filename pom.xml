@@ -201,7 +201,7 @@
 				<version>9.4.15.v20190215</version>
 				<configuration>
 					<httpConnector>
-						<port>80</port>
+						<port>8001</port>
 					</httpConnector>
 					<stopKey>shutdown</stopKey>
 					<stopPort>9966</stopPort>
